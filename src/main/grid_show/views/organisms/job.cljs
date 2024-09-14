@@ -1,4 +1,4 @@
-(ns grid-show.views.job
+(ns grid-show.views.organisms.job
   (:require [grid-show.state :as state]
             [grid-show.views.atoms.skill :as skill]
             [re-frame.core :as rf]
