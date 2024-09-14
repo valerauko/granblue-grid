@@ -26,14 +26,4 @@
      :depends-on #{:shared}}
     :tab
     {:init-fn grid-show.tab/init
-     :depends-on #{:shared}}}}
-
-  :debug
-  {:target :browser
-   :output-dir "ext/js"
-   :modules
-   {:shared
-    {:entries []}
-    :panel
-    {:init-fn grid-show.panel/init
      :depends-on #{:shared}}}}}}
