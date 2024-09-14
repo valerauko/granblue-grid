@@ -2,6 +2,14 @@
   "name": "chrome-ext-v3",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "shadow-cljs run grid-show.dev/watch",
+    "build": "shadow-cljs release ext"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
   "devDependencies": {
     "shadow-cljs": "2.20.2"
   }
