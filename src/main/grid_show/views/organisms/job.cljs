@@ -19,7 +19,6 @@
 (defn view
   []
   (let [job @(rf/subscribe [::state/job])]
-    (js/console.debug (clj->js (:skills job)))
     [:div
      {:class [$wrap]}
      [:img
