@@ -47,6 +47,11 @@
    (get decks active)))
 
 (rf/reg-sub
+ ::active-deck?
+ :<- [::active-deck]
+ :-> some?)
+
+(rf/reg-sub
  ::job
  :<- [::active-deck]
  (fn [{{id "master_id" image "job_id"} "job" skills "setaction"}]
