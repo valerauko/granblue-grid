@@ -59,3 +59,14 @@
     :image image
     :skills (into [] (comp (map #(get % "name"))
                            (filter some?)) skills)}))
+
+(rf/reg-sub
+ ::team
+ :<- [::active-deck]
+ (fn [{team "npc"}]
+   (mapv
+    (fn [{id "base_npc_id" image "npc_id" pluses "quality"}]
+      {:id id
+       :image image
+       :pluses (js/parseInt pluses)})
+    (vals team))))
