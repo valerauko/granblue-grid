@@ -31,5 +31,5 @@
      (into
       [:div
        {:class [$details]}]
-      (map #(fn [item] [skill/view item]))
+      (map skill/view)
       (:skills job))]))
