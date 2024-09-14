@@ -15,9 +15,9 @@
    :modules
    {:shared
     {:entries []}
-    :sw
-    {:init-fn demo.sw/init
+    :panel
+    {:init-fn demo.panel/init
      :depends-on #{:shared}}
-    :popup
-    {:init-fn demo.popup/init
+    :tab
+    {:init-fn demo.tab/init
      :depends-on #{:shared}}}}}}
