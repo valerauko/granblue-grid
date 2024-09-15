@@ -9,7 +9,7 @@
 (defn generate-css []
   (let [result
         (-> @css-ref
-            (cb/generate '{:ui {:include [grid_show*]}})
+            (cb/generate '{:ui {:include [grid-show*]}})
             (cb/write-outputs-to (io/file "ext" "css")))]
     (binding [*out* (io/writer System/out)]
       (prn [:CSS] :generated)
