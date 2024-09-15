@@ -19,9 +19,9 @@
         :text-overflow "ellipsis"}))
 
 (defn view
-  [name]
+  [skill]
   [:div
    {:class [$skill]}
    [:span
     {:class [$skill-name]}
-    (str name)]])
+    (str (:name skill))]])
