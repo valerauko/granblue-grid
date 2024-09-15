@@ -3,9 +3,6 @@
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
-(def $border
-  (css {}))
-
 (def $wrap
   (css {:border-image-source "url('https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/frame/bg.png?1511244036')"
         :border-image-slice "20 0 22 fill"
@@ -25,7 +22,6 @@
   []
   (let [team @(rf/subscribe [::state/team])]
     [:div
-     {:class [$border]}
      (into
       [:div
        {:class [$wrap]}]
