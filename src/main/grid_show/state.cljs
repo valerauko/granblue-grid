@@ -3,6 +3,15 @@
             [grid-show.collections :refer [index-by]]
             [re-frame.core :as rf]))
 
+(defrecord Summon [id image level plus])
+
+(defn support->Summon
+  [{id "summon_id"
+    image "summon_image_id"
+    level "summon_level"
+    plus "summon_quality"}]
+  (->Summon id image level plus))
+
 (rf/reg-event-db
  ::update-deck-info
  (fn [{old-decks ::decks :as db} [_ body]]
@@ -16,7 +25,7 @@
      (js/console.debug "Supporter:" (clj->js supporter))
      (js/console.debug "Decks:" (clj->js decks))
      (assoc db
-            ::supporter supporter
+            ::supporter (support->Summon supporter)
             ::decks (merge {} old-decks decks)))))
 
 (defn parse-deck-id
@@ -70,3 +79,18 @@
        :image image
        :pluses (js/parseInt pluses)})
     (vals team))))
+
+(rf/reg-sub
+ ::supporter
+ :-> ::supporter)
+
+(rf/reg-sub
+ ::summons
+ :<- [::active-deck]
+ (fn [{{{main "image_id"} "1" :as summons} "summon" subs "sub_summon"}]
+   {:main main
+    :summons (mapv
+              (fn [i]
+                (get-in summons [(str i) "image_id"]))
+              (range 2 6))
+    :subs (mapv #(get-in subs [(str %) "image_id"]) [1 2])}))
