@@ -47,11 +47,11 @@
        (map (fn [weapon] [weapon/view weapon/grid weapon])))
       ;; 2 to 10
       (range 2 11))
-     (into
-      [:div
-       {:class [$subs]}]
-      (comp
-       (map #(get weapons (str %)))
-       (map (fn [weapon] [weapon/view weapon/grid weapon])))
-      ;; 11 to 13
-      (range 11 14))]))
+     ;; 11 to 13
+     (let [subs (map #(get weapons (str %)) (range 11 14))]
+       (when (some some? subs)
+         (into
+          [:div
+           {:class [$subs]}]
+          (map (fn [weapon] [weapon/view weapon/grid weapon]))
+          subs)))]))
