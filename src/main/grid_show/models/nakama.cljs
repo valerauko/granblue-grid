@@ -1,10 +1,10 @@
-(ns grid-show.models.npc)
+(ns grid-show.models.nakama)
 
-(defrecord Npc [id image plus])
+(defrecord Nakama [id image plus])
 
 (defn parse-list
   [{team "npc"}]
   (mapv
    (fn [{id "base_npc_id" image "npc_id" pluses "quality"}]
-     (->Npc id image (js/parseInt pluses)))
+     (->Nakama id image (js/parseInt pluses)))
    (vals team)))
