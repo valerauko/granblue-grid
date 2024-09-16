@@ -6,4 +6,5 @@
   {:shadow/requires-server true}
   [& _]
   (shadow/watch :ext)
+  (shadow/watch :portfolio)
   (css/watch))
