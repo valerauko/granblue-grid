@@ -1,7 +1,7 @@
 (ns grid-show.collections)
 
 (defn index-by
-  [coll f]
+  [f coll]
   (->> coll
        (reduce
         (fn [aggr item]
