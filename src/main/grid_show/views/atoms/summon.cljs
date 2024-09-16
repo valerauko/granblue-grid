@@ -14,7 +14,7 @@
     plus
     [:img
      {:src (str "https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/ls/"
-                image
+                (or image 1999999999)
                 ".jpg")}]]
    [:span
     (str "Lv " level)]])
