@@ -12,13 +12,15 @@
         :position "relative"}))
 
 (def $link
-  (css {:display "block"
+  (css {:z-index "1"
+        :display "block"
         :position "absolute"
         :width "400px"
         :height "600px"}))
 
 (def $name
-  (css {:position "absolute"
+  (css {:z-index "0"
+        :position "absolute"
         :left "15px"
         :top "10px"}))
 
@@ -33,6 +35,12 @@
         :text-wrap "nowrap"
         :white-space "nowrap"
         :text-overflow "ellipsis"}))
+
+(def $over
+  (css {:position "absolute"
+        :z-index "2"
+        :width "100%"
+        :height "100%"}))
 
 (defn view
   [child]
@@ -58,4 +66,6 @@
       (map skill/view)
       (:skills job))
 
-     child]))
+     [:div
+      {:class [$over]}
+      child]]))
