@@ -34,8 +34,9 @@
        {:class [$block]}]
       (map summon/view)
       (vals grid))
-     (into
-      [:div
-       {:class [$block]}]
-      (map summon/view)
-      (vals subs))]))
+     (when (some some? (vals subs))
+       (into
+        [:div
+         {:class [$block]}]
+        (map summon/view)
+        (vals subs)))]))
