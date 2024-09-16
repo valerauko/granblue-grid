@@ -18,7 +18,17 @@
      (js/console.debug "Decks:" (clj->js decks))
      (assoc db
             ::supporter (support->Summon supporter)
-            ::decks (merge {} old-decks decks)))))
+            ::decks (merge-with deck/upsert {} old-decks decks)))))
+
+(rf/reg-event-db
+ ::update-deck-detail
+ (fn [db [_ body]]
+   (let [decoder (t/reader :json)
+         data (t/read decoder body)
+         deck (deck/parse-detail data)]
+     (-> db
+         (update-in [::decks (:id deck)] deck/upsert deck)
+         (assoc ::active (:id deck))))))
 
 (defn parse-deck-id
   [request-data id-key]
