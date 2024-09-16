@@ -11,6 +11,13 @@
        request
        #(rf/dispatch [::state/update-deck-info %]))
 
+      (or (.endsWith url "party/deck")
+          (.includes url "party/deck/")
+          (.includes url "party/deck?"))
+      (.getContent
+       request
+       #(rf/dispatch [::state/update-deck-detail %]))
+
       (or (.includes url "create_quest")
           (.includes url "questskip"))
       (when-let [request-data (some-> request .-request .-postData .-text)]
