@@ -44,4 +44,4 @@
         [team/view]
         [summons/view]
         [weapons/view]]]]
-     [:div "Start a quest to show your active deck"])])
+     [:div "Start a quest to show your active team"])])
