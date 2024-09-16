@@ -1,27 +1,19 @@
 (ns grid-show.state
   (:require [cognitect.transit :as t]
             [grid-show.collections :refer [index-by]]
+            [grid-show.models.deck :as deck]
+            [grid-show.models.summon :refer [support->Summon]]
             [re-frame.core :as rf]))
-
-(defrecord Summon [id image level plus])
-
-(defn support->Summon
-  [{id "summon_id"
-    image "summon_image_id"
-    level "summon_level"
-    plus "summon_quality"}]
-  (->Summon id image level plus))
 
 (rf/reg-event-db
  ::update-deck-info
  (fn [{old-decks ::decks :as db} [_ body]]
    (let [decoder (t/reader :json)
          {:strs [supporter] :as data} (t/read decoder body)
-         decks (some-> data
-                       (get "deck_list")
-                       vals
-                       (index-by (fn [{group "group_priority" deck "priority"}]
-                                   (str group deck))))]
+         decks (some->> (get data "deck_list")
+                        vals
+                        (map deck/parse-list)
+                        (index-by :id))]
      (js/console.debug "Supporter:" (clj->js supporter))
      (js/console.debug "Decks:" (clj->js decks))
      (assoc db
@@ -63,22 +55,12 @@
 (rf/reg-sub
  ::job
  :<- [::active-deck]
- (fn [{{id "master_id" image "job_id"} "job" skills "setaction"}]
-   {:id id
-    :image image
-    :skills (into [] (comp (map #(get % "name"))
-                           (filter some?)) skills)}))
+ :-> :job)
 
 (rf/reg-sub
  ::team
  :<- [::active-deck]
- (fn [{team "npc"}]
-   (mapv
-    (fn [{id "base_npc_id" image "npc_id" pluses "quality"}]
-      {:id id
-       :image image
-       :pluses (js/parseInt pluses)})
-    (vals team))))
+ :-> :team)
 
 (rf/reg-sub
  ::supporter
@@ -87,10 +69,9 @@
 (rf/reg-sub
  ::summons
  :<- [::active-deck]
- (fn [{{{main "image_id"} "1" :as summons} "summon" subs "sub_summon"}]
-   {:main main
-    :summons (mapv
-              (fn [i]
-                (get-in summons [(str i) "image_id"]))
-              (range 2 6))
-    :subs (mapv #(get-in subs [(str %) "image_id"]) [1 2])}))
+ :-> :summons)
+
+(rf/reg-sub
+ ::weapons
+ :<- [::active-deck]
+ :-> :weapons)
