@@ -14,7 +14,10 @@
 (def $skills
   (css {:display "flex"
         :flex "row nowrap"
-        :justify-content "center"}))
+        :justify-content "space-evenly"}))
+
+(def $level
+  (css {:text-align "center"}))
 
 (def main
   {:$class $main
@@ -41,5 +44,6 @@
     (map (fn [skill] [weapon-skill/view skill]))
     skills)
    (when level
-     [:span
+     [:div
+      {:class [$level]}
       (str "Lv" level " SLv" skill-level)])])
