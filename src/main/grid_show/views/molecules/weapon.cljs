@@ -1,5 +1,5 @@
 (ns grid-show.views.molecules.weapon
-  (:require [grid-show.views.atoms.weapon-skill :as weapon-skill]
+  (:require [grid-show.views.atoms.weapon.skill :as weapon-skill]
             [grid-show.views.molecules.plusable :as plusable]
             [shadow.css :refer [css]]))
 
