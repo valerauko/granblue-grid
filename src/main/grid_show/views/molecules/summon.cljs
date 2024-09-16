@@ -13,8 +13,11 @@
    [plusable/view
     plus
     [:img
-     {:src (str "https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/ls/"
-                (or image 1999999999)
+     {:src (str "https://prd-game-a"
+                (when image 1)
+                "-granbluefantasy.akamaized.net/assets/img/sp/assets/summon/ls/"
+                (or image 2999999999)
                 ".jpg")}]]
-   [:span
-    (str "Lv " level)]])
+   (when level
+     [:span
+      (str "Lv " level)])])
