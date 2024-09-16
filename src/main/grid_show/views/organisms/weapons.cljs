@@ -31,7 +31,7 @@
         :grid-row-gap "5px"}))
 
 (def $main
-  (css {:width "95px"
+  (css {:width "90px"
         :grid-area "main"
         :align-self "center"}))
 
