@@ -1,7 +1,6 @@
 (ns grid-show.views.organisms.weapons
   (:require [grid-show.state :as state]
-            [grid-show.views.atoms.weapon-skill :as weapon-skill]
-            [grid-show.views.molecules.plusable :as plusable]
+            [grid-show.views.molecules.weapon :as weapon]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
@@ -19,9 +18,6 @@
         :padding "0 20px"
         :gap "5px"}))
 
-(def $grid-item
-  (css {:width "95px"}))
-
 (def $grid
   (css {:grid-area "list"
         :display "grid"
@@ -30,11 +26,6 @@
         :grid-column-gap "5px"
         :grid-row-gap "5px"}))
 
-(def $main
-  (css {:width "90px"
-        :grid-area "main"
-        :align-self "center"}))
-
 (def $subs
   (css {:grid-area "subs"
         :display "grid"
@@ -42,71 +33,25 @@
         :grid-template-columns "repeat(3, 1fr)"
         :grid-column-gap "5px"}))
 
-(def $skills
-  (css {:display "flex"
-        :flex "row nowrap"
-        :justify-content "center"}))
-
 (defn view
   []
-  (let [weapons @(rf/subscribe [::state/weapons])
-        [main & others] (vals weapons)]
+  (let [{main "1" :as weapons} @(rf/subscribe [::state/weapons])]
     [:div
      {:class [$wrap]}
-     [:div
-      {:class [$main]}
-      [plusable/view
-       (:plus main)
-       [:img
-        {:src (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/weapon/ls/"
-                   (:image main 1999999999)
-                   ".jpg")}]]
-      [:div
-       {:class [$skills]}
-       [weapon-skill/view]
-       [weapon-skill/view]
-       [weapon-skill/view]]
-      [:span
-       "SLv 20"]]
+     [weapon/view weapon/main main]
      (into
       [:div
        {:class [$grid]}]
-      (map
-       (fn [{:keys [image plus]}]
-         [:div
-          {:class [$grid-item]}
-          [plusable/view
-           plus
-           [:img
-            {:src (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/weapon/m/"
-                       (or image 1999999999)
-                       ".jpg")}]]
-          [:div
-           {:class [$skills]}
-           [weapon-skill/view]
-           [weapon-skill/view]
-           [weapon-skill/view]]
-          [:span
-           "SLv 20"]]))
-      (filter some? (take 9 others)))
+      (comp
+       (map #(get weapons (str %)))
+       (map (fn [weapon] [weapon/view weapon/grid weapon])))
+      ;; 2 to 10
+      (range 2 11))
      (into
       [:div
        {:class [$subs]}]
-      (map
-       (fn [{:keys [image plus]}]
-         [:div
-          {:class [$grid-item]}
-          [plusable/view
-           plus
-           [:img
-            {:src (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/weapon/m/"
-                       (or image 1999999999)
-                       ".jpg")}]]
-          [:div
-           {:class [$skills]}
-           [weapon-skill/view]
-           [weapon-skill/view]
-           [weapon-skill/view]]
-          [:span
-           "SLv 20"]]))
-      (filter some? (drop 9 others)))]))
+      (comp
+       (map #(get weapons (str %)))
+       (map (fn [weapon] [weapon/view weapon/grid weapon])))
+      ;; 11 to 13
+      (range 11 14))]))

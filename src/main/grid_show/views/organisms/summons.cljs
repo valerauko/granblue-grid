@@ -1,6 +1,6 @@
 (ns grid-show.views.organisms.summons
   (:require [grid-show.state :as state]
-            [grid-show.views.atoms.summon :as summon]
+            [grid-show.views.molecules.summon :as summon]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 

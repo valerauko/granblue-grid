@@ -1,6 +1,6 @@
 (ns grid-show.views.organisms.team
   (:require [grid-show.state :as state]
-            [grid-show.views.molecules.plusable :as plusable]
+            [grid-show.views.atoms.nakama :as nakama]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
@@ -29,16 +29,5 @@
     (into
      [:div
       {:class [$wrap]}]
-     (map
-      (fn [{:keys [image plus]}]
-        [:div
-         {:class [$nakama]}
-         [plusable/view
-          plus
-          [:img
-           {:src (str "https://prd-game-a1-granbluefantasy.akamaized.net/assets/img/sp/assets/npc/quest/"
-                      image
-                      ".jpg")}]]
-         [:span
-          "Lv N/A"]]))
+     (map (fn [npc] [nakama/view $nakama npc]))
      team)))
