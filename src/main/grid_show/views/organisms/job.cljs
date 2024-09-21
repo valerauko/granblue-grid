@@ -1,6 +1,6 @@
 (ns grid-show.views.organisms.job
-  (:require [grid-show.views.atoms.skill :as skill]
-            [grid-show.state :as state]
+  (:require [grid-show.state :as state]
+            [grid-show.views.atoms.skill :as skill]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
@@ -25,16 +25,13 @@
         :top "10px"}))
 
 (def $skills
-  (css {:position "absolute"
-        :right "25px"
-        :top "20px"
-        :display "none"}))
-
-(def $skill
-  (css {:overflow "hidden"
-        :text-wrap "nowrap"
-        :white-space "nowrap"
-        :text-overflow "ellipsis"}))
+  (css {:background "rgba(25, 15, 10, 0.7)"
+        :padding "5px"
+        :border-radius "8px"
+        :width "160px"
+        :position "absolute"
+        :left "27px"
+        :top "400px"}))
 
 (def $over
   (css {:position "absolute"
