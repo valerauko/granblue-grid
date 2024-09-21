@@ -1,1 +1,1 @@
-{}
+{:linters {:not-empty? {:level :off}}}
