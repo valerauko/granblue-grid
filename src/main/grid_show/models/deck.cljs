@@ -34,7 +34,6 @@
 
 (defn upsert
   [new old]
-  ()
   (cond
     (instance? BasicDeck old) new
     (instance? DetailedDeck new) new
