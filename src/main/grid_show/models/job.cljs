@@ -11,12 +11,24 @@
                                         (->Skill id name)))) skills)))
 
 (defn parse-detail
-  [{_bullets "bullet_info"
+  [{bullets "bullet_info"
     {{_familiar "familiar_id"
       _shield "shield_id"
       {:strs [image]} "param"
       {{:strs [id]} "master"} "job"
       skills "set_action"} "pc"} "deck"}]
-  (->Job id image (into [] (comp (filter map?)
-                                 (map (fn [{id "set_action_id" :strs [name]}]
-                                        (->Skill id name)))) skills)))
+  (cond->
+   (->Job id image (into [] (comp (filter map?)
+                                  (map (fn [{id "set_action_id" :strs [name]}]
+                                         (->Skill id name)))) skills))
+    (not (empty? bullets))
+    (assoc :bullets
+           (transduce
+            (comp (map #(get-in bullets ["set_bullets" (str "bullet_" %)]))
+                  (filter some?))
+            (completing
+             (fn [aggr {id "bullet_id"}]
+               (conj aggr {:image id})))
+            []
+            (let [max-count (js/parseInt (get-in bullets ["set_bullets" "max_set_count"]))]
+              (range 1 (inc max-count)))))))

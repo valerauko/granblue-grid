@@ -1,6 +1,7 @@
 (ns grid-show.views.organisms.job
   (:require [grid-show.state :as state]
             [grid-show.views.atoms.skill :as skill]
+            [grid-show.views.molecules.bullets :as bullets]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
@@ -33,6 +34,16 @@
         :left "27px"
         :top "400px"}))
 
+(def $specials
+  (css {:position "absolute"
+        :width "160px"
+        :padding "5px"
+        :top "520px"
+        :left "30px"
+        :display "flex"
+        :align-items "center"
+        :justify-content "center"}))
+
 (def $over
   (css {:position "absolute"
         :z-index "2"
@@ -62,6 +73,10 @@
        {:class [$skills]}]
       (map skill/view)
       (:skills job))
+
+     [:div
+      {:class [$specials]}
+      [bullets/view job]]
 
      [:div
       {:class [$over]}
