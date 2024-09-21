@@ -1,10 +1,11 @@
 node_modules/
-public/js
 
 /target
 /checkouts
 /src/gen
 /ext/js
+ext/css/ui.css
+portfolio/js/
 
 pom.xml
 pom.xml.asc
@@ -20,8 +21,7 @@ pom.xml.asc
 .hgignore
 .hg/
 
-ext/css/ui.css
-
-portfolio/js/
 
 .calva/
+.clj-kondo/.cache
+.lsp/.cache
