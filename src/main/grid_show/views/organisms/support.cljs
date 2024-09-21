@@ -12,11 +12,8 @@
         :justify-content "end"}))
 
 (def $image
-  (css {:width "120px"
-        :margin "0 auto"
-        :background "top center no-repeat url('/support_bg.png')"
-        :background-size "120px 194px"
-        :padding "3px 8px 0 8px"}))
+  (css {:width "100px"
+        :margin "0 auto"}))
 
 (def $level
   (css {:width "100%"
