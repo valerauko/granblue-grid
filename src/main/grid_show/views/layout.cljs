@@ -3,6 +3,7 @@
             [grid-show.views.organisms.job :as job]
             [grid-show.views.organisms.team :as team]
             [grid-show.views.organisms.summons :as summons]
+            [grid-show.views.organisms.support :as support]
             [grid-show.views.organisms.weapons :as weapons]
             [shadow.css :refer [css]]
             [re-frame.core :as rf]))
@@ -41,6 +42,7 @@
       [job/view
        [:div
         {:class [$flex]}
+        [support/view]
         [team/view]
         [summons/view]
         [weapons/view]]]]
