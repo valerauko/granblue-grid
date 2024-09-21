@@ -26,7 +26,7 @@
   (css {:width "100%"
         :height "100%"
         :display "flex"
-        :flex-flow "column nowrap"
+        :flex-flow "column wrap"
         :justify-content "end"
         :align-items "end"
         :padding "20px 22px 31px 25px"}))

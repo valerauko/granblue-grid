@@ -13,7 +13,7 @@
 
 (def $skills
   (css {:display "flex"
-        :flex "row nowrap"
+        :flex-flow "row nowrap"
         :justify-content "space-evenly"}))
 
 (def $level

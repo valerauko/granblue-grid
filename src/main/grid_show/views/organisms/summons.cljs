@@ -12,13 +12,13 @@
         :height "min-content"
         :width "min-content"
         :display "flex"
-        :flex "row nowrap"
+        :flex-flow "row nowrap"
         :padding "0 20px"
         :gap "10px"}))
 
 (def $block
   (css {:display "flex"
-        :flex "row nowrap"
+        :flex-flow "row nowrap"
         :gap "5px"}))
 
 (defn view

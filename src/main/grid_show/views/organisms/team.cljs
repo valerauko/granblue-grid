@@ -13,7 +13,7 @@
         :width "min-content"
         :margin-bottom "auto"
         :display "flex"
-        :flex "row nowrap"
+        :flex-flow "row nowrap"
         :gap "5px"
         :padding "0 20px"}))
 
