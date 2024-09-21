@@ -1,6 +1,5 @@
 (ns grid-show.panel
-  (:require [grid-show.mock :as mock]
-            [grid-show.network :as network]
+  (:require [grid-show.network :as network]
             [grid-show.views.layout :as layout]
             [reagent.dom.client :as dom]
             [re-frame.core :as rf]))
