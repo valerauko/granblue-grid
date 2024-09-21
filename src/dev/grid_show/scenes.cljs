@@ -1,6 +1,7 @@
 (ns grid-show.scenes
   (:require [portfolio.ui]
             [grid-show.scenes.atoms.skill]
+            [grid-show.scenes.atoms.weapon.skill]
             [grid-show.scenes.molecules.plusable]))
 
 (defonce ^:export app
