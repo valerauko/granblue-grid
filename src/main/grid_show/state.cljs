@@ -26,6 +26,7 @@
    (let [decoder (t/reader :json)
          data (t/read decoder body)
          deck (deck/parse-detail data)]
+     (js/console.debug "Detailed deck:" (clj->js deck))
      (-> db
          (update-in [::decks (:id deck)] deck/upsert deck)
          (assoc ::active (:id deck))))))
