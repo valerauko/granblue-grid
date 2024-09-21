@@ -2,6 +2,7 @@
   (:require [portfolio.ui]
             [grid-show.scenes.atoms.skill]
             [grid-show.scenes.atoms.weapon.skill]
+            [grid-show.scenes.layout]
             [grid-show.scenes.molecules.bullets]
             [grid-show.scenes.molecules.plusable]))
 

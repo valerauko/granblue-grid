@@ -1,5 +1,6 @@
 (ns grid-show.panel
-  (:require [grid-show.network :as network]
+  (:require [grid-show.mock :as mock]
+            [grid-show.network :as network]
             [grid-show.views.layout :as layout]
             [reagent.dom.client :as dom]
             [re-frame.core :as rf]))
@@ -12,7 +13,9 @@
     (dom/render (dom/create-root root-el) [layout/view])))
 
 (defn ^:export init []
-  (js/chrome.devtools.network.onRequestFinished.addListener network/listener)
+  (if js/chrome.devtools
+    (js/chrome.devtools.network.onRequestFinished.addListener network/listener)
+    (js/console.warn "DevTools isn't available. If you're developing, either mock everything or use Portfolio."))
 
   (remount)
   (js/console.debug "GBF Grid Show panel init complete"))

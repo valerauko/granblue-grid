@@ -15,6 +15,7 @@
         :justify-content "center"
         :width "100%"
         :height "100vh"
+        :min-height "860px"
         :color "white"
         :text-shadow "0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black"
         :font-weight "500"
