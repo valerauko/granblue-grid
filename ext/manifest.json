@@ -1,7 +1,7 @@
 {
   "name": "GBF Grid Show",
-  "description": "Demonstrates usage and features of the event page by reminding user to drink water",
-  "version": "1.0",
+  "description": "Displays currenltly active GBF grid so that streamers don't need to screenshot it manually every time.",
+  "version": "0.7",
   "manifest_version": 3,
   "devtools_page": "tab.html"
 }
