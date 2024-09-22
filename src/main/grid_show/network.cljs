@@ -9,14 +9,21 @@
       (.includes url "decks_info")
       (.getContent
        request
-       #(rf/dispatch [::state/update-deck-info %]))
+       ;; if the network devtools tab is open and recording,
+       ;; after a while resources get "lost" probably due to some
+       ;; memory management issue (not related to this extension)
+       ;; errors are "Frame tree node for given frame not found"
+       ;; and "Extension server error: Object not found"
+       #(when-let [data %]
+          (rf/dispatch [::state/update-deck-info data])))
 
       (or (.endsWith url "party/deck")
           (.includes url "party/deck/")
           (.includes url "party/deck?"))
       (.getContent
        request
-       #(rf/dispatch [::state/update-deck-detail %]))
+       #(when-let [data %]
+          (rf/dispatch [::state/update-deck-detail data])))
 
       (or (.includes url "create_quest")
           (.includes url "questskip"))
