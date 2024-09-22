@@ -5,7 +5,7 @@
             [shadow.css :refer [css]]))
 
 (def $wrap
-  (css {:border-image-source "url('https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/frame/bg.png?1511244036')"
+  (css {:border-image-source "url('https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/ui/frame/bg.png')"
         :border-image-slice "40 0 42 fill"
         :border-top-width "20px"
         :border-bottom-width "20px"
