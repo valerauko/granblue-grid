@@ -3,7 +3,7 @@ name: 'Compile and upload'
 on:
   push:
     tags:
-      - v**
+      - 'v**'
 
 jobs:
   build:
