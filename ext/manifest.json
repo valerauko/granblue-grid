@@ -3,5 +3,9 @@
   "description": "Displays currenltly active GBF grid so that streamers don't need to screenshot it manually every time.",
   "version": "0.7",
   "manifest_version": 3,
-  "devtools_page": "tab.html"
+  "devtools_page": "tab.html",
+  "icons": {
+    "48": "icons/x48.png",
+    "128": "icons/x128.png"
+  }
 }
