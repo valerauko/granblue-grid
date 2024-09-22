@@ -16,6 +16,7 @@ jobs:
           cache: npm
       - uses: actions/cache@v4
         with:
+          key: shadow-maven-${{ hashFiles('shadow-cljs.edn') }}
           path: ~/.m2
       - run: npm install
       - run: npm run build
