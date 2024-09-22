@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "shadow-cljs run grid-show.dev/watch",
-    "build": "shadow-cljs release ext"
+    "build": "shadow-cljs run grid-show.css/build && shadow-cljs release ext"
   },
   "dependencies": {
     "react": "^18.2.0",
