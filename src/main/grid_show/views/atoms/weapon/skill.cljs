@@ -14,7 +14,7 @@
    })
 
 (defn view
-  [{:keys [id image]}]
+  [{:keys [id image name]}]
   (let [source
         (if-let [skill (skills id)]
           (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/item/skillplus/s/"
@@ -25,4 +25,5 @@
                ".png"))]
     [:img
      {:src source
+      :title (str name)
       :class [$icon]}]))

@@ -1,6 +1,6 @@
 (ns grid-show.models.weapon)
 
-(defrecord Skill [id image])
+(defrecord Skill [id image name])
 (defrecord Weapon [id image plus])
 
 (defn deck-list->Weapon
@@ -17,8 +17,8 @@
    (comp
     (map
      (fn [i]
-       (when-let [{:strs [id image]} (get data (str "skill" i))]
-         (->Skill id image))))
+       (when-let [{:strs [id image name]} (get data (str "skill" i))]
+         (->Skill id image name))))
     (filter some?))
    [1 2 3]))
 
