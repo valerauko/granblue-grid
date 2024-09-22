@@ -2,8 +2,8 @@ name: 'Compile and upload'
 
 on:
   push:
-    branches:
-      - develop/ci
+    tags:
+      - v**
 
 jobs:
   build:
