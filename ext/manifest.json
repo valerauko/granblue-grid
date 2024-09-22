@@ -1,7 +1,7 @@
 {
   "name": "GBF Grid Show",
   "description": "Displays currently active GBF grid so that streamers don't need to screenshot it manually every time.",
-  "version": "0.7",
+  "version": "0.7.0",
   "manifest_version": 3,
   "devtools_page": "tab.html",
   "icons": {

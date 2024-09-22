@@ -1,6 +1,6 @@
 {
-  "name": "chrome-ext-v3",
-  "version": "0.0.1",
+  "name": "gbf-grid-show",
+  "version": "0.7.0",
   "private": true,
   "scripts": {
     "dev": "shadow-cljs run grid-show.dev/watch",
