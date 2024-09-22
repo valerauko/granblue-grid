@@ -33,7 +33,7 @@
     (->DetailedDeck id job team weapons summons)))
 
 (defn upsert
-  [new old]
+  [old new]
   (cond
     (instance? BasicDeck old) new
     (instance? DetailedDeck new) new
