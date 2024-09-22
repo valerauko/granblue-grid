@@ -11,3 +11,9 @@ Certain details about the grid aren't available when starting a quest or joining
 It doesn't send any requests, doesn't use any resources not already available in the game, nor display any information that isn't readily available in-game. The purpose is just that streamers don't have to redo a bunch of screenshots every time they update their grid (which can happen quite often).
 
 That said, GBF is famously strict about "tool use" so use only at your own risk.
+
+## Development
+
+Containerized setup using VSCode dev containers.
+
+On the Chrome Extensions tab enable Developer mode and then Load unpacked the ext folder. The extension frame has to be reloaded to reflect changes.
