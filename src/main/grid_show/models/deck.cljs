@@ -25,6 +25,7 @@
 (defn parse-detail
   [{{int-id "priority"
      {:strs [weapons]} "pc"} "deck" :as data}]
+  ;; (js/console.log (clj->js data))
   (let [id (str int-id)
         job (job/parse-detail data)
         team (nakama/parse-detail data)

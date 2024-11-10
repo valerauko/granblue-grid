@@ -12,7 +12,7 @@
 
 (defn parse-detail
   [{bullets "bullet_info"
-    {{_familiar "familiar_id"
+    {{familiar "familiar_id"
       _shield "shield_id"
       {:strs [image]} "param"
       {{:strs [id]} "master"} "job"
@@ -31,4 +31,7 @@
                (conj aggr {:image id})))
             []
             (let [max-count (js/parseInt (get-in bullets ["set_bullets" "max_set_count"]))]
-              (range 1 (inc max-count)))))))
+              (range 1 (inc max-count)))))
+
+    (pos? familiar)
+    (assoc :familiar familiar)))

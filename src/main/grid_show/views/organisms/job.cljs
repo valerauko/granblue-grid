@@ -2,6 +2,7 @@
   (:require [grid-show.state :as state]
             [grid-show.views.atoms.skill :as skill]
             [grid-show.views.molecules.bullets :as bullets]
+            [grid-show.views.molecules.familiar :as familiar]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 
@@ -76,7 +77,8 @@
 
      [:div
       {:class [$specials]}
-      [bullets/view job]]
+      [bullets/view job]
+      [familiar/view job]]
 
      [:div
       {:class [$over]}
