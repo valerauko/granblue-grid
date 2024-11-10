@@ -2,6 +2,8 @@
 
 A convenient and hopefully safe Chrome extension that displays your active Granblue Fantasy grid (team, summons, skills, weapons), so you don't have to manually screenshot them all the time if you want to show it off in some video.
 
+![image](https://github.com/user-attachments/assets/8d060dea-0620-441e-8bea-8ce98128987e)
+
 ## How to use?
 
 1. in Chrome, from the main menu go to More tools > Developer tools (or press `ctrl` + `shift` + `i`)
