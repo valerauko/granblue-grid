@@ -1,6 +1,7 @@
 (ns grid-show.views.molecules.weapon
-  (:require [grid-show.views.atoms.weapon.skill :as weapon-skill]
+  (:require [grid-show.views.atoms.awakening :as awakening]
             [grid-show.views.atoms.plusable :as plusable]
+            [grid-show.views.atoms.weapon.skill :as weapon-skill]
             [shadow.css :refer [css]]))
 
 (def $grid-item
@@ -28,16 +29,18 @@
    :prefix "m"})
 
 (defn view
-  [{:keys [$class prefix]} {:keys [image plus skills level skill-level]}]
+  [{:keys [$class prefix]} {:keys [image plus skills level skill-level awakening]}]
   [:div
    {:class [$class]}
    [plusable/view
     plus
-    [:img
-     {:src (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/weapon/"
-                prefix "/"
-                (or image 1999999999)
-                ".jpg")}]]
+    [awakening/view
+     awakening
+     [:img
+      {:src (str "https://prd-game-a-granbluefantasy.akamaized.net/assets/img/sp/assets/weapon/"
+                 prefix "/"
+                 (or image 1999999999)
+                 ".jpg")}]]]
    (into
     [:div
      {:class [$skills]}]
