@@ -11,6 +11,7 @@
    "1724" 14015 ;; forbiddance chain
    "1725" 14016 ;; depravity chain
    "1726" 14017 ;; falsehood chain
+   "1809" 17003 ;; tria key
    })
 
 (defn view

@@ -32,3 +32,6 @@
 
 ;; (defscene ^:export supremacy-pendulum
 ;;   [skill/view (->Skill 1726 "skill_job_weapon")])
+
+(defscene ^:export tria-key
+  [skill/view (->Skill 1809 "skill_job_weapon" "フルゴル・インペトゥス")])
