@@ -35,9 +35,12 @@
 (defn deck-detail->Weapon
   [{{:strs [id]} "master"
     {:strs [level]
+     awakening-type "arousal_form"
      image "image_id"
      plus "quality"} "param" :as data}]
-  (assoc (->Weapon id image (js/parseInt plus))
-         :level level
-         :skill-level (deck-detail->skill-level data)
-         :skills (deck-detail->Skills data)))
+  (cond->
+   (assoc (->Weapon id image (js/parseInt plus))
+          :level level
+          :skill-level (deck-detail->skill-level data)
+          :skills (deck-detail->Skills data))
+    awakening-type (assoc :awakening awakening-type)))
