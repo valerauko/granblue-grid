@@ -35,7 +35,7 @@
 (defn deck-detail->Weapon
   [{{:strs [id]} "master"
     {:strs [level]
-     awakening-type "arousal_form"
+     {awakening-type "form"} "arousal"
      image "image_id"
      plus "quality"} "param" :as data}]
   (cond->

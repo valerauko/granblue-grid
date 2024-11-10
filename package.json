@@ -1,6 +1,6 @@
 {
   "name": "gbf-grid-show",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "dev": "shadow-cljs run grid-show.dev/watch",
