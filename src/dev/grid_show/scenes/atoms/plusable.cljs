@@ -1,5 +1,5 @@
-(ns grid-show.scenes.molecules.plusable
-  (:require [grid-show.views.molecules.plusable :as plusable]
+(ns grid-show.scenes.atoms.plusable
+  (:require [grid-show.views.atoms.plusable :as plusable]
             [portfolio.reagent-18 :refer-macros [defscene]]))
 
 (defscene ^:export plusable-vertical
