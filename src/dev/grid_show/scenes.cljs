@@ -1,5 +1,6 @@
 (ns grid-show.scenes
   (:require [portfolio.ui]
+            [grid-show.scenes.atoms.awakening]
             [grid-show.scenes.atoms.plusable]
             [grid-show.scenes.atoms.skill]
             [grid-show.scenes.atoms.weapon.skill]
