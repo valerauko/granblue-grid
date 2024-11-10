@@ -1,5 +1,5 @@
 (ns grid-show.views.atoms.nakama
-  (:require [grid-show.views.molecules.plusable :as plusable]))
+  (:require [grid-show.views.atoms.plusable :as plusable]))
 
 (defn view
   [$class {:keys [image plus level]}]

@@ -1,4 +1,4 @@
-(ns grid-show.views.molecules.plusable
+(ns grid-show.views.atoms.plusable
   (:require [shadow.css :refer [css]]))
 
 (def $wrap

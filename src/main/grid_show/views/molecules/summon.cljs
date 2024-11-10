@@ -1,5 +1,5 @@
 (ns grid-show.views.molecules.summon
-  (:require [grid-show.views.molecules.plusable :as plusable]
+  (:require [grid-show.views.atoms.plusable :as plusable]
             [shadow.css :refer [css]]))
 
 (def $summon

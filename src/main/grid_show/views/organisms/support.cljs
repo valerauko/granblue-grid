@@ -1,6 +1,6 @@
 (ns grid-show.views.organisms.support
   (:require [grid-show.state :as state]
-            [grid-show.views.molecules.plusable :as plusable]
+            [grid-show.views.atoms.plusable :as plusable]
             [re-frame.core :as rf]
             [shadow.css :refer [css]]))
 

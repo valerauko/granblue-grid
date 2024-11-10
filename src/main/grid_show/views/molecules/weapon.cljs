@@ -1,6 +1,6 @@
 (ns grid-show.views.molecules.weapon
   (:require [grid-show.views.atoms.weapon.skill :as weapon-skill]
-            [grid-show.views.molecules.plusable :as plusable]
+            [grid-show.views.atoms.plusable :as plusable]
             [shadow.css :refer [css]]))
 
 (def $grid-item
