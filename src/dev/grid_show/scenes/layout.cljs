@@ -41,3 +41,44 @@
       :grid-show.state/active "15"}))
   [_]
   [layout/view])
+
+(defscene ^:export manadiver
+  :on-mount
+  (fn [_]
+    (reset!
+     app-db
+     {:grid-show.state/decks
+      {"15" {:id "43",
+             :job {:id "130401",
+                   :image "311301_sw_1_01",
+                   :skills [{:id "1600", :name "ミゼラブルミスト"}
+                            {:id "201851", :name "ワイルドマギカ"}
+                            {:id "201861", :name "シークレットトライアド"}],
+                   :familiar 12},
+             :team [{:id "3040544000", :image "3040544000_02", :plus 300, :level 80}
+                    {:id "3040478000", :image "3040478000_01", :plus 300, :level 80}
+                    {:id "3040047000", :image "3040047000_03", :plus 0, :level 100}
+                    {:id "3040528000", :image "3040528000_01", :plus 0, :level 80}
+                    {:id "3040039000", :image "3040039000_04", :plus 0, :level 110}],
+             :weapons
+             {"1" {:id "1040116800", :image "1040116800", :plus 99, :level "150", :skill-level "15", :skills [{:id "1791", :image "skill_job_weapon", :name "凪の約定"} {:id "1842", :image "skill_job_weapon", :name "ボルテージ・オブ・ダガーII"} {:id "1783", :image "skill_job_weapon", :name "凪の真髄"}]},,
+              "2" {:id "1040516800", :image "1040516800", :plus 99, :level "150", :skill-level "15", :skills [{:id "2295", :image "skill_magna_4", :name "マグナブースト・ウィンド"} {:id "43", :image "skill_atk_m_4_3", :name "嵐竜方陣・攻刃III"} {:id "2302", :image "skill_job_weapon", :name "嵐竜の星醒"}]},
+              "3" {:id "1040516800", :image "1040516800", :plus 99, :level "150", :skill-level "15", :skills [{:id "2295", :image "skill_magna_4", :name "マグナブースト・ウィンド"} {:id "43", :image "skill_atk_m_4_3", :name "嵐竜方陣・攻刃III"} {:id "2302", :image "skill_job_weapon", :name "嵐竜の星醒"}]},
+              "4" {:id "1040516800", :image "1040516800", :plus 99, :level "150", :skill-level "15", :skills [{:id "2295", :image "skill_magna_4", :name "マグナブースト・ウィンド"} {:id "43", :image "skill_atk_m_4_3", :name "嵐竜方陣・攻刃III"} {:id "2302", :image "skill_job_weapon", :name "嵐竜の星醒"}]},
+              "5" {:id "1040212600", :image "1040212600_02", :plus 99, :level "220", :skill-level "20", :skills [{:id "2189", :image "skill_god_m_4_4", :name "嵐竜方陣・神威IV"} {:id "2205", :image "skill_ability_limit_2", :name "ベータ・リベレイション・アルブス"} {:id "1726", :image "skill_job_weapon", :name "虚偽と詐術"}]},
+              "6" {:id "1040808300", :image "1040808300", :plus 99, :level "150", :skill-level "15", :skills [{:id "938", :image "skill_whole_m_4_2", :name "嵐竜方陣・渾身II"} {:id "939", :image "skill_tec_m_4_3", :name "嵐竜方陣・技巧III"}]},
+              "7" {:id "1040808300", :image "1040808300", :plus 99, :level "150", :skill-level "15", :skills [{:id "938", :image "skill_whole_m_4_2", :name "嵐竜方陣・渾身II"} {:id "939", :image "skill_tec_m_4_3", :name "嵐竜方陣・技巧III"}]},
+              "8" {:id "1040709100", :image "1040709100", :plus 99, :level "150", :skill-level "15", :skills [{:id "1251", :image "skill_seraphic_4_3", :name "ラファエルの祝福III"} {:id "377", :image "skill_god_4", :name "風の神威"}]}
+              "9" {:id "1040423300", :image "1040423300", :plus 99, :level "150", :skill-level "SP", :skills [{:id "1844", :image "skill_job_weapon", :name "ボルテージ・オブ・スタッフII"} {:id "2252", :image "skill_job_weapon", :name "極叡導の煌き"} {:id "2280", :image "skill_job_weapon", :name "極星の光輝"}]}
+              "10" {:id "1040411100", :image "1040411100", :plus 99, :level "200", :skill-level "20", :skills [{:id "711", :image "skill_weapon_da_5", :name "バクラム・ビス"} {:id "759", :image "skill_ability_limit", :name "スカンデレ・ファクルタス"} {:id "1809", :image "skill_job_weapon", :name "フルゴル・インペトゥス"}]}},
+             :summons
+             {:main {:id "2040020000", :image "2040020000_04", :level "250", :plus 99},
+              :grid {:2 {:id "2040322000", :image "2040322000", :level "200", :plus 99},
+                     :3 {:id "2040347000", :image "2040347000", :level "150", :plus 99},
+                     :4 {:id "2040429000", :image "2040429000", :level "150", :plus 99},
+                     :5 {:id "2040202000", :image "2040202000", :level "150", :plus 99}},
+              :subs {:1 {:id "2040020000", :image "2040020000_03", :level "210", :plus 99},
+                     :2 {:id "2040430000", :image "2040430000", :level "100", :plus 0}}}}},
+      :grid-show.state/active "15"}))
+  [_]
+  [layout/view])
